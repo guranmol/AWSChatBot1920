@@ -9,7 +9,7 @@
 '''
 
 #------------------------------------------------------------------------------------------------------------------------------
-
+## Changes to demonstrate in video
 # This code uses the handler classes approach
 import logging
 import ask_sdk_core.utils as ask_utils
