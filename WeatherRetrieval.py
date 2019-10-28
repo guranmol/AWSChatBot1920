@@ -18,6 +18,23 @@ def handle(self, handler_input):
             JSONReturn = WeatherDataRetreival(Location,Country)
             #print(JSONReturn)
             return JSONReturn["currently"]["temperature"]
+        
+        def CurrentDescription(Location,Country):
+            JSONReturn = WeatherDataRetreival(Location,Country)
+            #print(JSONReturn)
+            return JSONReturn["currently"]["summary"]
+        
+        def TommorowTemperature(Location,Country):
+            JSONReturn = WeatherDataRetreival(Location,Country)
+            #print(JSONReturn)
+            HighTemp = JSONReturn["daily"]["data"][2]["temperatureHigh"]
+            LowTemp = JSONReturn["daily"]["data"][2]["temperatureLow"]
+            AvgTemp = HighTemp + LowTemp
+            AvgTemp = AvgTemp/2
+            return AvgTemp
+
+        
            
-        result = (CurrentTemperature("Bern","CH"))
+        result = (TommorowTemperature("Bern","CH"))
         speak_output = str(result)
+
